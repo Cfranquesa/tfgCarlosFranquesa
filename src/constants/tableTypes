@@ -1,0 +1,13 @@
+export const TABLE_TYPES = {
+    HEURISTICS: { id: 1, key: 'Heuristics', label: 'Heurísticas' },
+    COGA: { id: 2, key: 'COGA', label: 'Pautas COGA' },
+    WCAG: { id: 3, key: 'WCAG', label: 'Criterios WCAG' },
+}
+
+// Obtener nombre legible desde ID o key
+export function getTableLabel(value) {
+    const found = Object.values(TABLE_TYPES).find(
+        t => t.id === value || t.key === value
+    )
+    return found?.label || ''
+}

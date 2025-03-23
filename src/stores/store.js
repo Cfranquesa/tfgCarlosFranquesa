@@ -15,16 +15,14 @@ export const useDataStore = defineStore("pautas", {
         id: doc.id,
         ...doc.data()
       }));
-      console.log("Pautas cargadas:", this.pautas);
     },
-    
+
     async fetchCoga() {
       const querySnapshot = await getDocs(collection(db, "COGA"));
       this.coga = querySnapshot.docs.map(doc => ({
         id: doc.id,
         ...doc.data()
       }));
-      console.log("COGA cargadas:", this.coga);
     },
 
     async fetchHeuristics() {
@@ -33,7 +31,6 @@ export const useDataStore = defineStore("pautas", {
         id: doc.id,
         ...doc.data()
       }));
-      console.log("Heuristics cargadas:", this.heuristics);
     },
 
     async fetchAll() {
